@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import getData from "../../services/asyncMock";
+import getData from '../../services/asyncMock';
 import Item from "../Item/Item";
 
 function ItemListContainer() {
