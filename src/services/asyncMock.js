@@ -171,11 +171,11 @@ export function getProductData(idURL) {
 export function getCategoryData(categoryURL){
     return new Promise ((resolve, reject) => {
         const categoryRequested = productos.filter( 
-        (item) => {return item.category.toLowerCase() === categoryURL.toLowerCase()
-        });
+        (item) => item.category.toLowerCase() === categoryURL.toLowerCase()
+        );
         
         setTimeout (() =>{
-            resolve({categoryRequested})
+            resolve({ categoryRequested })
         },2000)
     })
 }

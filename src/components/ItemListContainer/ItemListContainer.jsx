@@ -18,7 +18,7 @@ function ItemListContainer() {
 
     useEffect(() => {
         requestProducts();
-      }, []);
+      }, [categoryID]);
     
 
     return (
