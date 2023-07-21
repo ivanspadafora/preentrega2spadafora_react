@@ -18,16 +18,18 @@ function ItemDetailContainer() {
 
   return (
     <>
-        <div className="item-card">
-            <div className="item-card_img">
-                <img src={product.img} alt="imagen"></img>
-            </div>
-            <div className="item-card_header">
-                <h2>{product.title}</h2>
-            </div>
-            <div className="item-card_detail">
-                <h4>$ {product.precio}</h4>
-                <span>Stock: {product.stock}</span>
+        <div className="item-detail-container">
+            <div className="item-card-d">
+                <div className="item-card_img-d">
+                    <img src={product.img} alt="imagen"></img>
+                </div>
+                <div className="item-card_header-d">
+                    <h3>{product.title}</h3>
+                </div>
+                <div className="item-card_detail-d">
+                    <h4>$ {product.precio}</h4>
+                    <span>Stock: {product.stock}</span>
+                </div>
             </div>
         </div>
     </>

@@ -6,11 +6,11 @@ const NavBar = () => {
     return (
         <nav>
             <ul className="navBar">
-                <h2>
-                    <li className="prigs-link">
-                    <Link to="/">PRIGS</Link>
+                <h1>
+                    <li>
+                    <Link className="prigs" to="/">PRIGS</Link>
                     </li>
-                </h2>
+                </h1>
                 <li className="nav-item">
                     <Link className="nav-link" to="/category/mouse">Mouse</Link>
                 </li>

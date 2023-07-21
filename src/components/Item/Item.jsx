@@ -12,7 +12,7 @@ function Item(props) {
             <img src={img} alt="imagen"></img>
         </div>
         <div className="item-card_header">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
         </div>
         <div className="item-card_detail">
             <h4>$ {precio}</h4>

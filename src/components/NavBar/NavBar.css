@@ -9,13 +9,14 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
 
-  .prigs-link{
+  .prigs{
     color: inherit;
     text-decoration: none;
     outline: none;
     border: none;
     background: none;
     cursor: pointer;
+    margin-left: 10px;
   }
   
   .nav-link{
