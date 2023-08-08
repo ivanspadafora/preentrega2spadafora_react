@@ -1,20 +1,40 @@
-import { useState, useEffect } from "react";
-import { getProductData } from "../../services/asyncMock";
-import { useParams } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { getProductData } from "../../services/firebase";
+import { Link, useParams } from "react-router-dom";
 import "./ItemDetailContainer.css";
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import { cartContext } from "../../context/cartContext";
+import ItemCount from "../ItemCount/ItemCount";
+
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState({});
+  const [isAddToCart, setIsAddToCart] = useState (false);
   const { id } = useParams();
 
-  async function requestProduct() {
-    const respuesta = await getProductData(id);
-    setProduct(respuesta);
-  }
+  const { addToCart, getItemInCart } = useContext(cartContext);
+  const itemInCart = getItemInCart(id);
 
+  // const maxItems = itemInCart? product.stock - itemInCart.count : product.stock;
+  
+  
   useEffect(() => {
+    async function requestProduct(id) {
+      try {
+        const respuesta = await getProductData(id);
+        setProduct(respuesta);
+      } catch (error) {
+        console.error("Error al cargar el producto:", error);
+      }
+    }
     requestProduct();
-  }, []);
+  }, [id]);
+
+  function handleAddToCart(clickCount){
+    addToCart(product, clickCount)
+    alert(`Agregaste ${clickCount} ${product.title} al Carrito`)
+    setIsAddToCart(true);
+  }
 
   return (
     <>
@@ -30,8 +50,22 @@ function ItemDetailContainer() {
                     <h4>$ {product.precio}</h4>
                     <span>Stock: {product.stock}</span>
                 </div>
+                
+                {
+                product.stock > 0 ?                
+                isAddToCart ? (
+                  <a href="/cart">Ir al carrito</a>
+                ):(
+                <ItemCount onConfirm={handleAddToCart} stock={product.stock} />
+                ):(
+                  <p>No hay stock disponible.</p>
+                )}
+                
+                <Link to="/">
+                  <ButtonComponent>Volver al inicio</ButtonComponent>
+                </Link>
             </div>
-        </div>
+          </div>
     </>
   );
 }

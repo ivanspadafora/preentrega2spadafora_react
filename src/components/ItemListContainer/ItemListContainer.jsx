@@ -1,25 +1,39 @@
 import { useState, useEffect } from "react";
-import getData, { getCategoryData } from '../../services/asyncMock';
+import { getCategoryData } from '../../services/firebase';
+import { getData } from "../../services/firebase";
 import Item from "../Item/Item";
 import { useParams } from "react-router-dom";
+import { Waveform } from "@uiball/loaders";
 
 
 
 function ItemListContainer() {
     const [products, setProducts] = useState([]);
     const {categoryID} = useParams();
+    const [isLoading, setIsLoading] = useState(true);
 
-    async function requestProducts(){
-        
-        let respuesta = categoryID ? await getCategoryData(categoryID) : await getData();
-        let productos = categoryID ? respuesta.categoryRequested : respuesta.productos;
-        setProducts(productos);
-        }
 
     useEffect(() => {
+        setIsLoading(true)
+        async function requestProducts(){
+        let respuesta =categoryID
+            ? await getCategoryData(categoryID)
+            : await getData();
+        setProducts(respuesta);
+        setIsLoading(false);
+        }
+
         requestProducts();
-      }, [categoryID]);
+    }, [categoryID]);
     
+      if (isLoading){
+        return <Waveform size={50} lineWeight={5} speed={1} color="black" />
+      }
+      else {
+        return (products.length === 0) ? (<p>No hay productos disponibles.</p> ):(
+            <Item productos={products} />
+        )
+      }
 
     return (
         <div>
@@ -32,7 +46,7 @@ function ItemListContainer() {
                 </div>
             </div>
         </div>
-    )
+      )
 };
 
 
