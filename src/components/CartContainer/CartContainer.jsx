@@ -11,7 +11,7 @@ function CartContainer() {
             <h1>Cart</h1>
             {
             cart.map((item) =>(
-                <div>
+                <div key={item.id}>
                     <h2>{item.title}</h2>
                     <p>${item.precio}</p>
                     <p>Cantidad: {item.count}</p>

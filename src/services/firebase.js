@@ -47,9 +47,9 @@ async function getData(){
 
 async function getCategoryData(){
     const productsRef = collection(db, "productos");
-    const q = query(productsRef, where("", "", ""))
+    const q = query(productsRef, where("category" ,"in", ["mouse", "teclados", "auriculares"]));
     const documentsSnapshot = await getDocs(q)
-
+    
     const documents = documentsSnapshot.docs;
     
     return documents.map((item) => ({ ...item.data(), id: item.id }));
@@ -74,7 +74,7 @@ async function exportProducts(){
         title: "MOUSE GAMER CORSAIR SABRE PRO CHAMPION SERIES",
         id: 1,
         stock: 4,
-        img: "https://postimg.cc/pmQvvYW9",
+        img: "https://i.postimg.cc/vZkZW3Cv/prod1.jpg",
         precio: 32000,
         category: "mouse"
     },
@@ -82,7 +82,7 @@ async function exportProducts(){
         title: "MOUSE LOGITECH G PRO X SUPERLIGHT WHITE",
         id: 2,
         stock: 5,
-        img: "https://postimg.cc/CZFgxB5c",
+        img: "https://i.postimg.cc/YSFq8QHB/prod2.jpg",
         precio: 77000,
         category: "mouse"
     },
@@ -90,7 +90,7 @@ async function exportProducts(){
         title: "MOUSE LOGITECH G305 LIGHTSPEED WIRELESS WHITE",
         id: 3,
         stock: 5,
-        img: "https://postimg.cc/D8LkQdbC",
+        img: "https://i.postimg.cc/BQwS0mZG/prod3.jpg",
         precio: 24000,
         category: "mouse"
     },
@@ -98,7 +98,7 @@ async function exportProducts(){
         title: "TECLADO HP HYPERX ALLOY ORIGINS CORE TKL BLUE SWITCH",
         id: 4,
         stock: 3,
-        img: "https://postimg.cc/KKJykGgx",
+        img: "https://i.postimg.cc/ZRhYQ0bB/prod4.jpg",
         precio: 58000,
         category: "teclados"
     },
@@ -106,7 +106,7 @@ async function exportProducts(){
         title: "TECLADO MECANICO LOGITECH WIRELESS G715 TKL AURORA WHITE RGB",
         id: 5,
         stock: 4,
-        img: "https://postimg.cc/bDrf17Qb",
+        img: "https://i.postimg.cc/G2J3nrtM/prod5.jpg",
         precio: 143000,
         category: "teclados"
     },
@@ -114,7 +114,7 @@ async function exportProducts(){
         title: "TECLADO EVGA Z20 RGB OPTICAL MECHANICAL GAMING",
         id: 6,
         stock: 5,
-        img: "https://postimg.cc/6T7NqN6x",
+        img: "https://i.postimg.cc/Y2R2XpJ0/prod6.jpg",
         precio: 46000,
         category: "teclados"
     },
@@ -122,7 +122,7 @@ async function exportProducts(){
         title: "AURICULAR C/MIC WIRELESS LOGITECH G735 WHITE",
         id: 7,
         stock: 6,
-        img: "https://postimg.cc/kRtrpWYg",
+        img: "https://i.postimg.cc/Kj0Z4NnB/prod7.jpg",
         precio: 134000,
         category: "auriculares"
     },
@@ -130,7 +130,7 @@ async function exportProducts(){
         title: "AURICULAR CORSAIR HS55 SURROUND 7.1 CARBON",
         id: 8,
         stock: 7,
-        img: "https://postimg.cc/7GR89KVR",
+        img: "https://i.postimg.cc/QC88XPWj/prod8.jpg",
         precio: 37000,
         category: "auriculares"
     },
@@ -138,7 +138,7 @@ async function exportProducts(){
         title: "AURICULAR C/MICROFONO LOGITECH G335 MINT",
         id: 9,
         stock: 5,
-        img: "https://postimg.cc/CdWpf6dB",
+        img: "https://i.postimg.cc/qM7JSPTL/prod9.jpg",
         precio: 34000,
         category: "auriculares"
     }];
@@ -149,7 +149,7 @@ async function exportProductsWithBatch(){
         title: "MOUSE GAMER CORSAIR SABRE PRO CHAMPION SERIES",
         id: 1,
         stock: 4,
-        img: "https://postimg.cc/pmQvvYW9",
+        img: "https://i.postimg.cc/vZkZW3Cv/prod1.jpg",
         precio: 32000,
         category: "mouse"
     },
@@ -157,7 +157,7 @@ async function exportProductsWithBatch(){
         title: "MOUSE LOGITECH G PRO X SUPERLIGHT WHITE",
         id: 2,
         stock: 5,
-        img: "https://postimg.cc/CZFgxB5c",
+        img: "https://i.postimg.cc/YSFq8QHB/prod2.jpg",
         precio: 77000,
         category: "mouse"
     },
@@ -165,7 +165,7 @@ async function exportProductsWithBatch(){
         title: "MOUSE LOGITECH G305 LIGHTSPEED WIRELESS WHITE",
         id: 3,
         stock: 5,
-        img: "https://postimg.cc/D8LkQdbC",
+        img: "https://i.postimg.cc/BQwS0mZG/prod3.jpg",
         precio: 24000,
         category: "mouse"
     },
@@ -173,7 +173,7 @@ async function exportProductsWithBatch(){
         title: "TECLADO HP HYPERX ALLOY ORIGINS CORE TKL BLUE SWITCH",
         id: 4,
         stock: 3,
-        img: "https://postimg.cc/KKJykGgx",
+        img: "https://i.postimg.cc/ZRhYQ0bB/prod4.jpg",
         precio: 58000,
         category: "teclados"
     },
@@ -181,7 +181,7 @@ async function exportProductsWithBatch(){
         title: "TECLADO MECANICO LOGITECH WIRELESS G715 TKL AURORA WHITE RGB",
         id: 5,
         stock: 4,
-        img: "https://postimg.cc/bDrf17Qb",
+        img: "https://i.postimg.cc/G2J3nrtM/prod5.jpg",
         precio: 143000,
         category: "teclados"
     },
@@ -189,7 +189,7 @@ async function exportProductsWithBatch(){
         title: "TECLADO EVGA Z20 RGB OPTICAL MECHANICAL GAMING",
         id: 6,
         stock: 5,
-        img: "https://postimg.cc/6T7NqN6x",
+        img: "https://i.postimg.cc/Y2R2XpJ0/prod6.jpg",
         precio: 46000,
         category: "teclados"
     },
@@ -197,7 +197,7 @@ async function exportProductsWithBatch(){
         title: "AURICULAR C/MIC WIRELESS LOGITECH G735 WHITE",
         id: 7,
         stock: 6,
-        img: "https://postimg.cc/kRtrpWYg",
+        img: "https://i.postimg.cc/Kj0Z4NnB/prod7.jpg",
         precio: 134000,
         category: "auriculares"
     },
@@ -205,7 +205,7 @@ async function exportProductsWithBatch(){
         title: "AURICULAR CORSAIR HS55 SURROUND 7.1 CARBON",
         id: 8,
         stock: 7,
-        img: "https://postimg.cc/7GR89KVR",
+        img: "https://i.postimg.cc/QC88XPWj/prod8.jpg",
         precio: 37000,
         category: "auriculares"
     },
@@ -213,7 +213,7 @@ async function exportProductsWithBatch(){
         title: "AURICULAR C/MICROFONO LOGITECH G335 MINT",
         id: 9,
         stock: 5,
-        img: "https://postimg.cc/CdWpf6dB",
+        img: "https://i.postimg.cc/qM7JSPTL/prod9.jpg",
         precio: 34000,
         category: "auriculares"
     }];
