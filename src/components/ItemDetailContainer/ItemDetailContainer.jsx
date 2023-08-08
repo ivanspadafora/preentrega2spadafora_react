@@ -19,16 +19,16 @@ function ItemDetailContainer() {
   
   
   useEffect(() => {
-    async function requestProduct(id) {
-      try {
-        const respuesta = await getProductData(id);
-        setProduct(respuesta);
-      } catch (error) {
-        console.error("Error al cargar el producto:", error);
-      }
+    async function requestProduct() {
+        try {
+            const respuesta = await getProductData(id);
+            setProduct(respuesta);
+        } catch (error) {
+            console.error("Error al cargar el producto:", error);
+        }
     }
     requestProduct();
-  }, [id]);
+  },[id]);
 
   function handleAddToCart(clickCount){
     addToCart(product, clickCount)
