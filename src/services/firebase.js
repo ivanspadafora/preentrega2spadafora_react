@@ -8,7 +8,6 @@ import {
     where,
     query,
     writeBatch,
-    addDoc,
     setDoc
 } from "firebase/firestore"
 
@@ -44,29 +43,13 @@ async function getData(){
     }
   }
   
-
-async function getCategoryData(){
+async function getCategoryData(categoryID){
     const productsRef = collection(db, "productos");
-    const q = query(productsRef, where("category" ,"in", ["mouse", "teclados", "auriculares"]));
+    const q = query(productsRef, where("category" ,"==", categoryID));
     const documentsSnapshot = await getDocs(q)
-    
     const documents = documentsSnapshot.docs;
     
     return documents.map((item) => ({ ...item.data(), id: item.id }));
-}
-
-async function createOrder(orderData){
-    const collectionRef = collection(db, "orders")
-    const docCreated = await addDoc(collectionRef, orderData)
-  
-    return(docCreated.id)
-  }
-
-async function getOrder(id){
-    const docRef = doc(db, "orders",id);
-    const docSnapshot = await getDoc(docRef);
-
-    return { ...docSnapshot.data(), id: docSnapshot.id };
 }
 
 async function exportProducts(){
@@ -228,6 +211,20 @@ productos.forEach( producto => {
   })
 
   const data = await batch.commit();
+}
+
+async function createOrder(orderData){
+    const collectionRef = collection(db, "orders")
+    const docCreated = await setDoc(collectionRef, orderData)
+  
+    return(docCreated.id)
+  } 
+
+async function getOrder(id){
+    const docRef = doc(db, "orders",id);
+    const docSnapshot = await getDoc(docRef);
+
+    return { ...docSnapshot.data(), id: docSnapshot.id };
 }
 
 export { getData, getProductData, getCategoryData, getOrder, createOrder, exportProducts, exportProductsWithBatch };

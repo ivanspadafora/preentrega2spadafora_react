@@ -54,13 +54,14 @@ function ItemDetailContainer() {
                 {
                 product.stock > 0 ?                
                 isAddToCart ? (
-                  <a href="/cart">Ir al carrito</a>
+                  <Link to="/cart">Ir al carrito</Link>
                 ):(
                 <ItemCount onConfirm={handleAddToCart} stock={product.stock} />
                 ):(
                   <p>No hay stock disponible.</p>
                 )}
-                
+                <br/>
+                <br/>
                 <Link to="/">
                   <ButtonComponent>Volver al inicio</ButtonComponent>
                 </Link>
