@@ -27,3 +27,24 @@ Se empleó la librería SweetAlert y Toastify para mostrar notificaciones al usu
 ![react1](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/e6a45d30-9f2a-4db3-bbdd-b37fb26ee571)
 ![react2](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/ab7d35e5-b412-4336-85ca-ec4519c65c0b)
 ![react3](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/fca0b82e-8d06-4a29-9ccf-a586dc06203c)
+![react4](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/37045ab5-8a0d-404a-9af5-3296806af842)
+![react6](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/918227e2-4e68-45be-a7da-5ddd72fb742f)
+![react5](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/e438d0fc-9e1b-40cf-aa22-e89e1d354765)
+
+## Datos:
+
+- Estudiante: Iván Giuliano Spadafora
+
+- LinkedIn: https://www.linkedin.com/in/ivanspadafora/
+
+- GitHub: https://github.com/ivanspadafora
+
+- Curso: React JS / Coderhouse
+
+- Comisión: 43305
+
+- Profesor: Santiago Salkin
+
+- Tutor: Emmanuel Acosta
+
+- Puedes ver el Proyecto en Netlify: https://ecommerce-prigs.netlify.app
