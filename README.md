@@ -25,7 +25,5 @@ Se empleó la librería SweetAlert y Toastify para mostrar notificaciones al usu
 # Capturas:
 
 ![react1](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/e6a45d30-9f2a-4db3-bbdd-b37fb26ee571)
-
 ![react2](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/ab7d35e5-b412-4336-85ca-ec4519c65c0b)
-
 ![react3](https://github.com/ivanspadafora/proyectofinalreactjs_spadafora/assets/125631302/fca0b82e-8d06-4a29-9ccf-a586dc06203c)
