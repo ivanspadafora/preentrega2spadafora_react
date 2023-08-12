@@ -25,7 +25,7 @@ function ItemListContainer() {
     }, [categoryID]);
 
     if (isLoading) {
-        return <Waveform size={50} lineWeight={5} speed={1} color='black' />;
+        return <Waveform size={50} lineWeight={5} speed={1} color='#4d679b'/>
     } else {
         return products.length === 0 ? (
             <p>No hay productos disponibles.</p>
@@ -36,7 +36,7 @@ function ItemListContainer() {
                 ))}
             </div>
         );
-    }
-}
+    };
+};
 
 export default ItemListContainer;

@@ -59,18 +59,17 @@ function ItemDetailContainer() {
                   {product.stock > 0 ?
                       isAddToCart ? (
                           <Link className="btn-carrito" to="/cart">Ir al carrito</Link>
-                      ) : (
+                       ):(
                           <ItemCount onConfirm={handleAddToCart} stock={product.stock} />
-                      )
-                      : (
+                       ):(
                           <p>No hay stock disponible.</p>
-                      )
-                  }
-              </div>
-          </div>
-      </div>
-  );
-}
+                       )
+                    }
+                </div>
+            </div>
+        </div>
+    );
+};
 
 export default ItemDetailContainer;
 

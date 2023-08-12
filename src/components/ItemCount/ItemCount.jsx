@@ -9,14 +9,14 @@ function ItemCount(props) {
     if (clickCount === props.stock) {
     } else {
       setClickCount(clickCount + 1);
-    }
-  }
+    };
+  };
 
   function handleClickSub() {
     if (clickCount > 1) {
       setClickCount(clickCount - 1);
-    }
-  }
+    };
+  };
 
   return (
     <div>
@@ -45,6 +45,6 @@ function ItemCount(props) {
       
     </div>
   );
-}
+};
 
 export default ItemCount;

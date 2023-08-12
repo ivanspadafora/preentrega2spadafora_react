@@ -19,9 +19,9 @@ function CartContainer() {
                         <div className="cart-item-detail">
                             <h4 style={{ marginTop: 20}}>{item.title}</h4>
                             <hr/>
-                            <h5 style={{fontWeight: 'bold', fontSize: '1.5rem'}}>Precio unidad: ${item.precio}</h5>
+                            <h5 style={{ fontSize: '1.5rem'}}>Precio unidad: ${item.precio}</h5>
                             <p style={{fontSize: '1.2rem' }}>Cantidad: {item.count}</p>
-                            <h4>Precio total: ${item.precio * item.count}</h4>
+                            <h4 style={{fontWeight: 'bold'}}>Precio total: ${item.precio * item.count}</h4>
                             <ButtonComponent colorFondo="#4d679b" onClick={() => removeItem(item.id)}>Eliminar</ButtonComponent>
                         </div>
                     </div>
@@ -34,6 +34,6 @@ function CartContainer() {
             </div>
         </div>       
     );
-}
+};
 
 export default CartContainer;

@@ -40,13 +40,13 @@ async function getData(){
       return { ...docSnapshot.data(), id: docSnapshot.id };
     } else {
       throw new Error("No se encontró el producto.");
-    }
-  }
+    };
+  };
   
 async function getCategoryData(categoryID){
     const productsRef = collection(db, "productos");
     const q = query(productsRef, where("category" ,"==", categoryID));
-    const documentsSnapshot = await getDocs(q)
+    const documentsSnapshot = await getDocs(q);
     const documents = documentsSnapshot.docs;
     
     return documents.map((item) => ({ ...item.data(), id: item.id }));
@@ -56,7 +56,7 @@ async function createOrder(orderData){
     const docRef = await addDoc(collection(db,"orders"), orderData);
   
     return docRef.id;
-  } 
+} 
 
 async function getOrder(id){
     const docRef = doc(db, "orders",id);

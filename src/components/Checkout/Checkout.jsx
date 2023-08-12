@@ -49,7 +49,7 @@ function Checkout(){
                 text: "No hay productos en el carrito.",
             });
         };
-    }
+    };
 
 
     function onInputChange(evt) {

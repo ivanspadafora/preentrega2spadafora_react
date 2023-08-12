@@ -1,8 +1,8 @@
 .cart-container {
     width: 100%;
     display: flex;
-    flex-direction: column; /* Cambiamos a columna para que los productos se muestren uno debajo del otro */
-    align-items: center; /* Centramos horizontalmente */
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
 }
 
@@ -21,8 +21,8 @@
 .item-card:hover {
     transform: translate(0px, -5px);
     box-shadow: 5px 5px 9px 0px #4d679b,
-      -3px -3px 18px 0px #4d679b;
-  }
+            -3px -3px 18px 0px #4d679b;
+}
 
 .item-card_img img{
     width: 320px; 
@@ -35,8 +35,10 @@
 }
 
 .cart-confirm {
-    width: 100%;
-    border: 1px solid black;
+    width: 720px;
+    height: 140px;
+    border: 1px solid white;
+    border-radius: 5px;
     padding: 10px;
     color: white;
     background-color: #4d679b;

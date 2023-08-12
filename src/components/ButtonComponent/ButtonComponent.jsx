@@ -5,7 +5,7 @@ function ButtonComponent(props){
 
     return(
         <button onClick={props.onClick} style={{ backgroundColor: colorFondo, padding: 5}}>{children}</button>
-    )
-    }
+    );
+};
 
-    export default ButtonComponent;
+export default ButtonComponent;

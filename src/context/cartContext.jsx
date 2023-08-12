@@ -14,7 +14,7 @@ function CartContextProvider(props) {
   };
 
   function addToCart(product, count) {
-   setCart( [...cart, { ...product, count}])
+   setCart( [...cart, { ...product, count}]);
   }
 
   function removeItem(id) {
@@ -30,24 +30,23 @@ function CartContextProvider(props) {
       progress: undefined,
       theme: "dark",
   });
-  }
+  };
 
   function clearCart() {
     setCart([]);
   }
 
   function getTotalItemsCart() {
-    
     let total = 0;
     cart.forEach((item) => {
       total += item.count;
     });
     return cart.reduce((total, item) => total + item.count, 0);
-  }
+  };
 
   function getItemInCart(id) {
     return cart.find((item) => item.id === id) || null;
-  }
+  };
 
   return (
     <cartContext.Provider
@@ -64,6 +63,6 @@ function CartContextProvider(props) {
       {props.children}
     </cartContext.Provider>
   );
-}
+};
 
 export { cartContext, CartContextProvider };
