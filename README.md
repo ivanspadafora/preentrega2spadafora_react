@@ -1,6 +1,6 @@
 # Ecommerce con React JS de Iván Giuliano Spadafora - CODERHOUSE.
 
-Hola! Mi nombre es Iván, actualmente estoy cursando la carrera de Desarrollo Full Stack, y en esta ocasión presento mi proyecto para la entrega final del curso de React. El consiste en un Ecommerce que permite a los usuarios explorar y comprar productos electrónicos. La aplicación cuenta con las siguientes funcionalidades clave:
+Hola! Mi nombre es Iván, actualmente estoy cursando la carrera de Desarrollo Full Stack, y en esta ocasión presento mi proyecto para la entrega final del curso de React. El mismo consiste en un Ecommerce que permite a los usuarios explorar y comprar productos electrónicos. La aplicación cuenta con las siguientes funcionalidades clave:
 
 ## Componentes reutilizables:
 
