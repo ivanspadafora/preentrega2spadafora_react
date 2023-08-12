@@ -26,23 +26,24 @@ function ItemCount(props) {
           alignItems: "center",
           justifyContent: "center",
         }}
-        className="item-count-container"
-      >
-        <button className="item-count-button p-1" onClick={handleClickSub}>
+        className="item-count-container">
+        <button className="item-count-button p-1 mt-5 m-2" onClick={handleClickSub}>
           -
         </button>
-        <h2 className="count-text">{clickCount}</h2>
-        <button className="item-count-button p-1" onClick={handleClickAdd}>
+          <h2 className="count-text">{clickCount}</h2>
+        <button className="item-count-button p-1 mt-5 m-2" onClick={handleClickAdd}>
           +
         </button>
       </div>
+
+      <br />
+
       <ButtonComponent colorFondo="#4d679b"
-        //onClick={ props.onConfirm } -> Solo invocar la funcion
-        onClick={(event) => props.onConfirm(clickCount, event)} //-> Solo invocar la funcion + parametros
-        //onClick={(event) => props.onConfirm(clickCount, event)} // > Solo invocar la funcion + parametros + objeto event
-        className="item-count-button add-to-cart-button"
-      >
+        onClick={(event) => props.onConfirm(clickCount, event)}
+        className="item-count-button add-to-cart-button">
+
         <h5 className="p-1">Añadir al carrito</h5>
+
       </ButtonComponent>
       
     </div>

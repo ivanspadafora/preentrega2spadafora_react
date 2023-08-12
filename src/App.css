@@ -32,11 +32,12 @@
 }
 
 .flex-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
 
 .counter{

@@ -1,47 +1,38 @@
 import React from "react";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
-import { createOrder } from "../../services/firebase";
-
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import { Link } from "react-router-dom";
+import "./CartContainer.css";
 
 function CartContainer() {
-    const {cart, removeItem} = useContext(cartContext);
-    
-    // Hacer el Conditional Rendering cuando el carrito esté vacío.
+    const {cart, removeItem, calculateTotal} = useContext(cartContext);
 
-    
-
-    async function handleCheckout(){
-        const orderData = {
-            items: cart,
-            comprador: { name: "Ivan", email: "ivan@mail.com", phone: "123123123" },
-            fecha: new Date(),
-            total: 0, // lo tenemos que sacar del context
-        }
-
-        const idOrder = await createOrder(orderData);
-        alert(`Gracias por tu compra! Tu N° de Orden es: ${idOrder}`)
-        // No hacer alert ni por consola, con sweetalert o toastify.
-        // Luego de la compra, vaciar el carrito. clearCart();
-    }
     return (
-        <div className="item-detail-container">
-            
-            {
-            cart.map((item) =>(
+        <div className="cart-container">
+            {cart.map((item) => (
                 <div key={item.id}>
-                    <h4>{item.title}</h4>
-                    <p>${item.precio}</p>
-                    <p>Cantidad: {item.count}</p>
-                    <p>Precio total: ${item.precio * item.count}</p>
-                    <button onClick={() =>removeItem(item.id)}>Eliminar</button>
+                    <div className="item-card">
+                        <div className="item-card_img">
+                            <img src={item.img} alt={item.title} />
+                        </div>
+                        <div style={{color: '#4d679b'}} className="cart-item-details">
+                            <h4 style={{border: '1px solid black', marginTop: 20}}>{item.title}</h4>
+                            <h5 style={{fontWeight: 'bold', fontSize: '1.5rem'}}>Precio unidad: ${item.precio}</h5>
+                            <p style={{fontSize: '1.2rem' }}>Cantidad: {item.count}</p>
+                            <h4>Precio total: ${item.precio * item.count}</h4>
+                            <ButtonComponent colorFondo="#4d679b" onClick={() => removeItem(item.id)}>Eliminar</ButtonComponent>
+                        </div>
+                    </div>
                 </div>
             ))}
-            <br />
-            <div>Total de la compra: $999</div>
-            <button onClick={handleCheckout}>Comprar</button>
-        </div>
-        )
-    }
+            <div style={{alignItems:'center'}} className="cart-confirm">
+                <h3>Total de la compra: ${calculateTotal()} </h3>
+                <br/>
+                <Link className="comprar" style={{textDecoration: 'none'}} to="/checkout">Comprar</Link>
+            </div>
+        </div>       
+    );
+}
 
 export default CartContainer;

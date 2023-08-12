@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOrder } from '../../services/firebase';
-import { or } from 'firebase/firestore';
 
 function OrderConfirm() {
-    const [orderData] = useState(null)
+    const [orderData, setOrderData] = useState(null)
     const { id } = useParams();
 
     useEffect(() =>{
@@ -18,7 +17,7 @@ function OrderConfirm() {
         {
             orderData !== null ? (
             <div>
-                Fecha de la compra:
+                Fecha de la compra: {orderData.date}
                 <p>Productos adquiridos: {" "}
                 {orderData.items.map((item)=> {
                     return (

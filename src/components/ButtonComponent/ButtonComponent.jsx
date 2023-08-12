@@ -4,7 +4,7 @@ function ButtonComponent(props){
     const {children, colorFondo} = props;
 
     return(
-        <button onClick={props.onClick} style={{ backgroundColor: colorFondo}}>{children}</button>
+        <button onClick={props.onClick} style={{ backgroundColor: colorFondo, padding: 5}}>{children}</button>
     )
     }
 

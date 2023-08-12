@@ -1,7 +1,3 @@
-.price-discount{
-    color: darkolivegreen;
-  }
-  
   .font-xl{
     font-size: 20px;
   }
@@ -15,13 +11,11 @@
   .item-card-d{
     text-align: center;
     justify-content: center;
-    margin: 25px 15px;
     padding: 20px 25px;
     width: 320px;
     border-radius: 4px;
     background-color: #fff;
     transition: all ease-in 0.25s;
-    cursor: pointer;
   }
   
   .item-card_header-d{
@@ -49,28 +43,14 @@
     transform: translate(0px, -5px);
     box-shadow: 5px 5px 9px 0px rgba(171, 171, 171, 0.3),
       -3px -3px 18px 0px rgba(255, 255, 255, 0.95);
-  
-    cursor: pointer;
   }
   
   .item-card_detail-d{
     height: 140px;
     padding: 12px 8px;
   }
-  
-  .item-card:hover .item-card_favicon{
-    display: block;
-  }
-  
-  .item-card_favicon.favorite{
-    display: block;
-    background-color: rgb(223, 117, 84);
+
+  .volver:hover{
+    background-color: black;
     color: white;
   }
-  
-  .item-card_favicon.favorite.green{
-    display: block;
-    background-color: rgb(84, 223, 147);
-    color: white;
-  }
-  

@@ -1,4 +1,6 @@
 import { useContext, useState, createContext } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const cartContext = createContext({ cart: [] });
@@ -7,7 +9,9 @@ const cartContext = createContext({ cart: [] });
 function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
 
-  const prueba = "otra prueba";
+  const calculateTotal = () =>{
+    return cart.reduce((total,item) => total + item.precio * item.count, 0);
+  };
 
   function addToCart(product, count) {
    setCart( [...cart, { ...product, count}])
@@ -15,6 +19,17 @@ function CartContextProvider(props) {
 
   function removeItem(id) {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+
+    toast('Producto eliminado del carrito.', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+  });
   }
 
   function clearCart() {
@@ -38,12 +53,12 @@ function CartContextProvider(props) {
     <cartContext.Provider
       value={{
         cart,
-        prueba,
         addToCart,
         removeItem,
         getItemInCart,
         clearCart,
         getTotalItemsCart,
+        calculateTotal
       }}
     >
       {props.children}

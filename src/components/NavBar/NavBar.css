@@ -19,13 +19,6 @@
     margin-left: 10px;
   }
   
-  .nav-link{
-    text-decoration: none;
-    font-weight:400;
-    font-size: 1.15em;
-    color:rgb(59, 59, 50)
-  }
-  
   .nav-link:hover{
     font-weight: bold;
     color:rgb(255, 255, 255)
