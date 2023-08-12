@@ -16,8 +16,9 @@ function CartContainer() {
                         <div className="item-card_img">
                             <img src={item.img} alt={item.title} />
                         </div>
-                        <div style={{color: '#4d679b'}} className="cart-item-details">
-                            <h4 style={{border: '1px solid black', marginTop: 20}}>{item.title}</h4>
+                        <div className="cart-item-detail">
+                            <h4 style={{ marginTop: 20}}>{item.title}</h4>
+                            <hr/>
                             <h5 style={{fontWeight: 'bold', fontSize: '1.5rem'}}>Precio unidad: ${item.precio}</h5>
                             <p style={{fontSize: '1.2rem' }}>Cantidad: {item.count}</p>
                             <h4>Precio total: ${item.precio * item.count}</h4>

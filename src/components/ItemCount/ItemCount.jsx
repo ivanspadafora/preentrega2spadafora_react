@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import "../Item/item.css"
 
 function ItemCount(props) {
   const [clickCount, setClickCount] = useState(1);
@@ -25,24 +26,20 @@ function ItemCount(props) {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-        }}
-        className="item-count-container">
-        <button className="item-count-button p-1 mt-5 m-2" onClick={handleClickSub}>
+        }}>
+        <button className="btn-handle p-1 mt-5 m-2" onClick={handleClickSub}>
           -
         </button>
-          <h2 className="count-text">{clickCount}</h2>
-        <button className="item-count-button p-1 mt-5 m-2" onClick={handleClickAdd}>
+          <h2>{clickCount}</h2>
+        <button className="btn-handle p-1 mt-5 m-2" onClick={handleClickAdd}>
           +
         </button>
       </div>
 
-      <br />
-
       <ButtonComponent colorFondo="#4d679b"
-        onClick={(event) => props.onConfirm(clickCount, event)}
-        className="item-count-button add-to-cart-button">
+        onClick={(event) => props.onConfirm(clickCount, event)}>
 
-        <h5 className="p-1">Añadir al carrito</h5>
+        <h5 className="btn-agregar p-1">Agregar al carrito</h5>
 
       </ButtonComponent>
       

@@ -24,7 +24,7 @@ function Checkout(){
 
         const orderData = {
             items: cart,
-            comprador: { name: "Ivan", email: "ivan@mail.com", phone: "123123123" },
+            comprador: comprador,
             fecha: new Date(),
             total: totalCompra,
         }
@@ -114,12 +114,12 @@ function Checkout(){
 
         <div className="btn-form">
             <button
-                style={{backgroundColor: '#4caf50', marginRight: 10}}
+                className="btn-confirm"
                 disabled={!(comprador.firstname !== "" && comprador.lastname !== "" && comprador.age !== "")}
                 onClick={handleCheckout}>
                 Confirmar Compra
             </button>
-            <button style={{backgroundColor: '#f44336'}} onClick={resetForm}>Cancelar</button>
+            <button className="btn-cancel" onClick={resetForm}>Cancelar</button>
         </div>
 
     </form>

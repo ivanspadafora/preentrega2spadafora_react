@@ -7,29 +7,29 @@
     border-radius: 10px;
     max-width: 400px;
     margin: 0 auto;
-};
+}
 
 .form {
     margin-bottom: 15px;
-};
+}
 
 .form label {
     display: block;
     margin-bottom: 5px;
-};
+}
 
 .input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-};
+}
 
 .btn-form {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-};
+}
 
 .btn-confirm, .btn-cancel {
     padding: 8px 15px;
@@ -37,13 +37,23 @@
     border-radius: 4px;
     cursor: pointer;
     color: white;
-};
+}
 
 .btn-confirm {
     background-color: #4caf50;
     margin-right: 10px;
-};
+}
+
+.btn-confirm:hover{
+    background-color: #4caf4fbb;
+    font-weight: bold;
+}
 
 .btn-cancel {
     background-color: #f44336;
-};
+}
+
+.btn-cancel:hover{
+    background-color: #f44336bb;
+    font-weight: bold;
+}
