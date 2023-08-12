@@ -45,6 +45,6 @@ Se empleó la librería SweetAlert y Toastify para mostrar notificaciones al usu
 
 - Profesor: Santiago Salkin
 
-- Tutor: Emmanuel Acosta
+- Tutor: Emanuel Acosta
 
 - Puedes ver el Proyecto en Netlify: https://ecommerce-prigs.vercel.app/
